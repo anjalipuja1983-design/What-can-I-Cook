@@ -1,0 +1,682 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WhatCanICook? | Smart Cooking for Hostel Life</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">🥑</span>
+                WhatCanICook?
+            </a>
+
+            <nav class="nav-links">
+                <a href="#finder">Find Recipes</a>
+                <a href="#recipes">Recipes</a>
+                <a href="#features">Features</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="favoritesBtn">
+                    ♡ Favorites
+                </button>
+
+                <button class="btn btn-primary" id="profileBtn">
+                    Login / Profile
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <main>
+
+        <section class="hero">
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        🌿 SMART COOKING FOR HOSTEL LIFE
+                    </span>
+
+                    <h1>
+                        Good food starts with
+                        <span>what you have.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Tell us what's in your kitchen. Discover simple
+                        recipes that fit your ingredients, budget,
+                        cooking setup, and schedule.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#finder" class="btn btn-primary btn-large">
+                            Find my recipes →
+                        </a>
+
+                        <button class="btn btn-outline btn-large" id="hostelModeBtn">
+                            ⚡ Hostel Mode
+                        </button>
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div class="stat">
+                            <span class="stat-icon">🍲</span>
+                            <div>
+                                <strong>15-minute meals</strong>
+                                <p>Quick & easy ideas</p>
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <span class="stat-icon">💸</span>
+                            <div>
+                                <strong>Student budget</strong>
+                                <p>Cook more, spend less</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+                        alt="Healthy bowl of fresh food"
+                    >
+                    <div class="image-badge">
+                        <span>🥗</span>
+                        <div>
+                            <strong>Simple ingredients</strong>
+                            <p>Delicious possibilities</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= RECIPE FINDER ================= -->
+
+        <section class="finder-section" id="finder">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">YOUR KITCHEN, YOUR RULES</span>
+                    <h2>What's in your kitchen?</h2>
+                    <p>
+                        Select ingredients and set your cooking preferences.
+                    </p>
+                </div>
+
+                <div class="finder-card">
+
+                    <!-- Ingredient Selection -->
+
+                    <div class="ingredient-section">
+
+                        <div class="section-top">
+                            <div>
+                                <h3>🥕 Choose your ingredients</h3>
+                                <p>Select what you already have.</p>
+                            </div>
+
+                            <span class="ingredient-count" id="ingredientCount">
+                                0 ingredients selected
+                            </span>
+                        </div>
+
+                        <label for="ingredientSearch">
+                            Search ingredients
+                        </label>
+
+                        <div class="search-box">
+                            <input
+                                type="text"
+                                id="ingredientSearch"
+                                placeholder="e.g. potato, bread, eggs..."
+                            >
+                            <button class="btn btn-primary" id="addIngredientBtn">
+                                Add
+                            </button>
+                        </div>
+
+                        <div class="ingredient-chips" id="ingredientChips">
+                            <!-- JavaScript will add selected ingredients here -->
+                        </div>
+
+                        <div class="ingredient-actions">
+                            <button class="btn btn-outline" id="commonIngredientsBtn">
+                                Select common items
+                            </button>
+
+                            <button class="btn btn-text" id="clearIngredientsBtn">
+                                Clear selection
+                            </button>
+                        </div>
+
+                        <div class="common-ingredients" id="commonIngredients">
+
+                            <button class="ingredient-option" data-ingredient="Potato">
+                                🥔 Potato
+                            </button>
+
+                            <button class="ingredient-option" data-ingredient="Rice">
+                                🍚 Rice
+                            </button>
+
+                            <button class="ingredient-option" data-ingredient="Bread">
+                                🍞 Bread
+                            </button>
+
+                            <button class="ingredient-option" data-ingredient="Eggs">
+                                🥚 Eggs
+                            </button>
+
+                            <button class="ingredient-option" data-ingredient="Onion">
+                                🧅 Onion
+                            </button>
+
+                            <button class="ingredient-option" data-ingredient="Tomato">
+                                🍅 Tomato
+                            </button>
+
+                            <button class="ingredient-option" data-ingredient="Maggi">
+                                🍜 Maggi
+                            </button>
+
+                            <button class="ingredient-option" data-ingredient="Milk">
+                                🥛 Milk
+                            </button>
+
+                            <button class="ingredient-option" data-ingredient="Paneer">
+                                🧀 Paneer
+                            </button>
+
+                            <button class="ingredient-option" data-ingredient="Cheese">
+                                🧀 Cheese
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Cooking Preferences -->
+
+                    <div class="preferences-section">
+
+                        <div class="section-top">
+                            <div>
+                                <h3>🎯 Customize results</h3>
+                                <p>
+                                    Choose your setup and limits.
+                                    We'll show recipes that fit your situation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Equipment -->
+
+                        <div class="form-group">
+
+                            <label>Hostel equipment</label>
+
+                            <div class="option-group" id="equipmentOptions">
+
+                                <button class="option-btn active" data-equipment="any">
+                                    Any
+                                </button>
+
+                                <button class="option-btn" data-equipment="kettle">
+                                    Kettle
+                                </button>
+
+                                <button class="option-btn" data-equipment="pan">
+                                    Pan
+                                </button>
+
+                                <button class="option-btn" data-equipment="induction">
+                                    Induction
+                                </button>
+
+                                <button class="option-btn" data-equipment="no-cook">
+                                    No-cook
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Budget, Time and Diet -->
+
+                        <div class="filter-grid">
+
+                            <div class="form-group">
+                                <label for="budgetFilter">
+                                    Budget per serving
+                                </label>
+
+                                <select id="budgetFilter">
+                                    <option value="100">Any budget (up to ₹100)</option>
+                                    <option value="20">Up to ₹20</option>
+                                    <option value="50">Up to ₹50</option>
+                                    <option value="100">Up to ₹100</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="timeFilter">
+                                    Maximum cooking time
+                                </label>
+
+                                <select id="timeFilter">
+                                    <option value="999">Any time</option>
+                                    <option value="5">5 minutes</option>
+                                    <option value="10">10 minutes</option>
+                                    <option value="15">15 minutes</option>
+                                    <option value="30">30 minutes</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dietFilter">
+                                    Diet preference
+                                </label>
+
+                                <select id="dietFilter">
+                                    <option value="all">All recipes</option>
+                                    <option value="vegetarian">Vegetarian</option>
+                                    <option value="vegan">Vegan</option>
+                                    <option value="eggetarian">Eggetarian</option>
+                                    <option value="high-protein">High protein</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <button class="btn btn-primary btn-large find-btn" id="findRecipesBtn">
+                            Find Recipes →
+                        </button>
+
+                        <p class="preference-message" id="preferenceMessage">
+                            Your preferences will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECIPE RESULTS ================= -->
+
+        <section class="recipes-section" id="recipes">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">MADE FOR YOUR INGREDIENTS</span>
+                    <h2>Your recipe matches</h2>
+                    <p id="recipeSubtitle">
+                        Select ingredients to get personalized suggestions.
+                    </p>
+                </div>
+
+                <!-- Recipe Filters -->
+
+                <div class="recipe-toolbar">
+
+                    <div class="recipe-count" id="recipeCount">
+                        0 recipes found
+                    </div>
+
+                    <div class="recipe-filters">
+
+                        <select id="sortRecipes">
+                            <option value="recommended">Recommended</option>
+                            <option value="time">Quickest first</option>
+                            <option value="budget">Lowest cost</option>
+                            <option value="protein">Highest protein</option>
+                        </select>
+
+                        <button class="btn btn-outline" id="showAllRecipesBtn">
+                            Show all recipes
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Recipe Cards -->
+
+                <div class="recipe-grid" id="recipeGrid">
+
+                    <!-- JavaScript will insert recipe cards here -->
+
+                </div>
+
+                <!-- Empty State -->
+
+                <div class="empty-state" id="emptyState">
+
+                    <div class="empty-icon">🍳</div>
+
+                    <h3>Your next meal is waiting!</h3>
+
+                    <p>
+                        Select ingredients above and click Find Recipes
+                        to discover what you can cook.
+                    </p>
+
+                    <button class="btn btn-primary" id="emptyFindBtn">
+                        Find my recipes
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <section class="features-section" id="features">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">MORE THAN A RECIPE FINDER</span>
+                    <h2>Made for student life</h2>
+                    <p>
+                        Smart features that make everyday cooking easier.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Hostel Mode</h3>
+                        <p>
+                            Find recipes that work with a kettle,
+                            pan, induction, or no cooking equipment.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Budget Friendly</h3>
+                        <p>
+                            Discover affordable meals based on
+                            your per-serving budget.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">⏱️</div>
+                        <h3>Quick Meals</h3>
+                        <p>
+                            Find recipes according to the time
+                            you have available.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🥗</div>
+                        <h3>Nutrition Info</h3>
+                        <p>
+                            View estimated calories, protein,
+                            carbohydrates, and fats.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">❤️</div>
+                        <h3>Save Favorites</h3>
+                        <p>
+                            Save recipes you love and
+                            access them whenever you need.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">👨‍🍳</div>
+                        <h3>Cooking Assistant</h3>
+                        <p>
+                            Follow simple step-by-step instructions
+                            with a built-in cooking timer.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= COOKING ASSISTANT MODAL ================= -->
+
+        <div class="modal" id="recipeModal">
+
+            <div class="modal-overlay" id="modalOverlay"></div>
+
+            <div class="modal-content">
+
+                <button class="modal-close" id="closeRecipeModal">
+                    &times;
+                </button>
+
+                <div id="recipeDetails">
+
+                    <!-- Recipe details will be inserted using JavaScript -->
+
+                </div>
+
+                <div class="cooking-assistant" id="cookingAssistant">
+
+                    <h3>👨‍🍳 Cooking Assistant</h3>
+
+                    <div id="cookingSteps">
+                        <!-- Cooking instructions -->
+                    </div>
+
+                    <div class="timer-box">
+
+                        <h4>⏱️ Cooking Timer</h4>
+
+                        <div id="timerDisplay">
+                            00:00
+                        </div>
+
+                        <div class="timer-controls">
+
+                            <input
+                                type="number"
+                                id="timerMinutes"
+                                min="1"
+                                max="180"
+                                placeholder="Minutes"
+                            >
+
+                            <button class="btn btn-primary" id="startTimerBtn">
+                                Start Timer
+                            </button>
+
+                            <button class="btn btn-outline" id="stopTimerBtn">
+                                Stop
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= FAVORITES MODAL ================= -->
+
+        <div class="modal" id="favoritesModal">
+
+            <div class="modal-overlay" id="favoritesOverlay"></div>
+
+            <div class="modal-content">
+
+                <button class="modal-close" id="closeFavoritesModal">
+                    &times;
+                </button>
+
+                <div class="section-heading">
+                    <h2>❤️ Your Favorites</h2>
+                    <p>Your saved recipes in one place.</p>
+                </div>
+
+                <div class="recipe-grid" id="favoritesGrid">
+                    <!-- Saved recipes will appear here -->
+                </div>
+
+                <p class="empty-message" id="emptyFavorites">
+                    You haven't saved any recipes yet.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= LOGIN / PROFILE MODAL ================= -->
+
+        <div class="modal" id="profileModal">
+
+            <div class="modal-overlay" id="profileOverlay"></div>
+
+            <div class="modal-content profile-content">
+
+                <button class="modal-close" id="closeProfileModal">
+                    &times;
+                </button>
+
+                <div class="section-heading">
+                    <span class="eyebrow">WELCOME TO WHATCANICOOK</span>
+                    <h2>Your Profile</h2>
+                    <p>Save your preferences for a personalized experience.</p>
+                </div>
+
+                <form id="profileForm">
+
+                    <div class="form-group">
+                        <label for="userName">Your name</label>
+
+                        <input
+                            type="text"
+                            id="userName"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userEmail">Email address</label>
+
+                        <input
+                            type="email"
+                            id="userEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">
+                        Save Profile
+                    </button>
+
+                </form>
+
+                <p class="profile-message" id="profileMessage"></p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= TOAST NOTIFICATION ================= -->
+
+        <div class="toast" id="toast">
+            <span id="toastMessage">Done!</span>
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <a href="#" class="logo">
+                🥑 WhatCanICook?
+            </a>
+
+            <p>
+                Good food, less waste, smarter student living.
+            </p>
+
+            <div class="footer-links">
+                <a href="#finder">Find Recipes</a>
+                <a href="#recipes">Recipes</a>
+                <a href="#features">Features</a>
+            </div>
+
+            <p class="copyright">
+                © 2026 WhatCanICook? Made for student life.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>
